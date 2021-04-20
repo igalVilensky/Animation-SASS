@@ -25,19 +25,9 @@ div,
 
 @keyframes play2 {
   0% {
-    /* border: $rt solid $cc;
-    box-shadow: $bs; */
     transform: scale(1);
   }
-
-  50% {
-    /*  border: $rt solid #66ef17;
-    box-shadow: $bs; */
-    transform: scale(1.025);
-  }
   100% {
-    /*  border: $rt solid #ef4e17;
-    box-shadow: $bs; */
     transform: scale(1.05);
   }
 }
