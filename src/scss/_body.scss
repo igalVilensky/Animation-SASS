@@ -2,31 +2,50 @@ body {
   background: $bg;
 }
 
-div {
+div,
+:after {
   border-radius: 50%;
   position: absolute;
+  transform-style: preserve-3d;
 }
 
 .ring {
   left: 50%;
   top: 50%;
-  margin: -0.5 * $d-ring;
-  width: $d-ring;
-  height: $d-ring;
-  border: $rt solid $cc;
+  &::after {
+    margin: -0.5 * $d-ring;
+    width: $d-ring;
+    height: $d-ring;
+    border: $rt solid $cc;
+    content: "";
+  }
 }
 
 .dot {
   @for $i from 1 to $n-dots + 1 {
     &:nth-child(#{$i}) {
       transform: rotate($i * $ba) translate($d-ring * 0.5);
+      &::after {
+        animation-delay: -$i * 2s/12;
+      }
     }
   }
   &:after {
+    border: 5px solid $bg;
     width: $d-dots;
     height: $d-dots;
     background: $cc;
     margin: -0.5 * $d-dots;
     content: "";
+    animation: play 2s linear infinite;
+  }
+}
+
+@keyframes play {
+  0% {
+    transform: rotateY(0deg) translate($t-dist) rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) translate($t-dist) rotateY(-360deg);
   }
 }
