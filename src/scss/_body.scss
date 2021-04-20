@@ -1,3 +1,32 @@
 body {
   background: $bg;
 }
+
+div {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.ring {
+  left: 50%;
+  top: 50%;
+  margin: -0.5 * $d-ring;
+  width: $d-ring;
+  height: $d-ring;
+  border: $rt solid $cc;
+}
+
+.dot {
+  @for $i from 1 to $n-dots + 1 {
+    &:nth-child(#{$i}) {
+      transform: rotate($i * $ba) translate($d-ring * 0.5);
+    }
+  }
+  &:after {
+    width: $d-dots;
+    height: $d-dots;
+    background: $cc;
+    margin: -0.5 * $d-dots;
+    content: "";
+  }
+}

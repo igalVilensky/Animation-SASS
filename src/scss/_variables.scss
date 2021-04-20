@@ -6,8 +6,14 @@ $cc: #fff;
 // NUmber of dots
 
 $n-dots: 12;
+
+// Diameter of ring and dots
 $d-dots: 30px;
 $d-ring: 300px;
+
+// Ring thickness
+
+$rt: $d-dots * 0.5;
 
 // Base angle
 
