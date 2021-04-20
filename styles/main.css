@@ -18,9 +18,19 @@ div,
   width: 300px;
   height: 300px;
   border: 15px solid #fff;
+  box-shadow: 0 0 0 9px #222;
   content: "";
+  animation: play2 2s alternate ease-in infinite;
 }
 
+@keyframes play2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
 .dot:nth-child(1) {
   transform: rotate(30deg) translate(150px);
 }
